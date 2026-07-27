@@ -19,6 +19,8 @@
 
 ---
 
+> This repository is an unofficial maintenance fork of [Octol1ttle/FlightAssistant](https://github.com/Octol1ttle/FlightAssistant). It exists to carry compatibility work and fixes separately from upstream. For the original project history and documentation, see the upstream repository.
+
 **FlightAssistant** is a powerful client-side mod that adds fully configurable full-fledged avionics, situational awareness tools and advanced automation to Minecraft elytras, while still being friendly to casual users. 
 
 ## Main Features
