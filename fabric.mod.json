@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "flightassistant",
+  "version": "3.1.0",
+  "name": "FlightAssistant Continued",
+  "description": "Unofficial community continuation of FlightAssistant for modern Minecraft versions (26.2+) with bug fixes.",
+  "authors": [
+    "Henner4746 (Port Maintainer)",
+    "Octol1ttle (Original Author)",
+    "mctaylors"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/flightassistant-continued",
+    "sources": "https://github.com/Henner4746/FlightAssistant",
+    "issues": "https://github.com/Henner4746/FlightAssistant/issues"
+  },
+  "license": "LGPL-3.0-only",
+  "icon": "assets/flightassistant/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      {
+        "value": "ru.octol1ttle.flightassistant.FlightAssistantFabric",
+        "adapter": "kotlin"
+      }
+    ],
+    "modmenu": [
+      {
+        "value": "ru.octol1ttle.flightassistant.config.FAModMenuIntegration",
+        "adapter": "kotlin"
+      }
+    ]
+  },
+  "depends": {
+    "fabricloader": "\u003e\u003d0.16.3",
+    "minecraft": "26.2",
+    "java": "\u003e\u003d17",
+    "architectury": "*",
+    "fabric-language-kotlin": "*",
+    "yet_another_config_lib_v3": "*"
+  },
+  "recommends": {
+    "modmenu": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/5kcBCvnbTp"
+      }
+    }
+  },
+  "mixins": [
+    {
+      "config": "flightassistant.mixins.json",
+      "environment": "client"
+    }
+  ]
+}

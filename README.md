@@ -1,17 +1,18 @@
-<p align=center>
-    <img src="https://raw.githubusercontent.com/Henner4746/FlightAssistant/dev/images/logo.png" alt="FlightAssistant Logo">
-</p>
+# FlightAssistant Continued
+
+> [!IMPORTANT]
+> **Unofficial Community Port & Continuation**  
+> This is an unofficial, community-maintained fork of [FlightAssistant by Octol1ttle](https://github.com/Octol1ttle/FlightAssistant), updated for modern Minecraft versions (26.2+) with rendering bug fixes.  
+> This project is **independent** and is neither affiliated with nor endorsed by Octol1ttle.  
+> Licensed under [GNU Lesser General Public License v3.0 (LGPL-3.0)](LICENSE).
 
 <p align=center>
-    <a href="https://modrinth.com/mod/flightassistant-unofficial">
+    <a href="https://modrinth.com/mod/flightassistant-continued">
         <img src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3.2.0/assets/cozy/available/modrinth_vector.svg"
             alt="Available on Modrinth"></a>
     <a href="https://modrinth.com/mod/fabric-api/">
         <img src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3.2.0/assets/cozy/requires/fabric-api_vector.svg"
             alt="Requires Fabric API"></a>
-    <a href="https://modrinth.com/mod/flightassistant/versions?l=forge&l=neoforge">
-        <img src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3.2.0/assets/cozy/supported/forge_vector.svg"
-            alt="Available for Forge"></a>
     <a href="https://discord.gg/5kcBCvnbTp">
         <img src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3.2.0/assets/cozy/social/discord-plural_vector.svg"
             alt="Chat with us on Discord"></a>
@@ -19,9 +20,7 @@
 
 ---
 
-> This repository is an unofficial maintenance fork of [Octol1ttle/FlightAssistant](https://github.com/Octol1ttle/FlightAssistant). It exists to carry compatibility work and fixes separately from upstream. For the original project history and documentation, see the upstream repository.
-
-**FlightAssistant** is a powerful client-side mod that adds fully configurable full-fledged avionics, situational awareness tools and advanced automation to Minecraft elytras, while still being friendly to casual users. 
+**FlightAssistant Continued** is a powerful client-side mod that adds fully configurable full-fledged avionics, situational awareness tools and advanced automation to Minecraft elytras, while still being friendly to casual users.
 
 ## Main Features
 

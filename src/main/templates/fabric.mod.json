@@ -3,15 +3,16 @@
     "id": "${mod_id}",
     "version": "${mod_version}",
     "name": "${mod_name}",
-    "description": "FlightAssistant brings your Elytra flying experience to the next level, all client-side!",
+    "description": "Unofficial community continuation of FlightAssistant for modern Minecraft versions (26.2+) with bug fixes.",
     "authors": [
-        "Octol1ttle",
+        "Henner4746 (Port Maintainer)",
+        "Octol1ttle (Original Author)",
         "mctaylors"
     ],
     "contact": {
-        "homepage": "https://modrinth.com/mod/flightassistant",
-        "sources": "https://github.com/Octol1ttle/FlightAssistant",
-        "issues": "https://github.com/Octol1ttle/FlightAssistant/issues"
+        "homepage": "https://modrinth.com/mod/flightassistant-continued",
+        "sources": "https://github.com/Henner4746/FlightAssistant",
+        "issues": "https://github.com/Henner4746/FlightAssistant/issues"
     },
     "license": "LGPL-3.0-only",
     "icon": "assets/flightassistant/icon.png",
