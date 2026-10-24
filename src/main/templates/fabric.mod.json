@@ -41,12 +41,5 @@
     },
     "recommends": {
         "modmenu": "*"
-    },
-    "custom": {
-        "modmenu": {
-            "links": {
-                "modmenu.discord": "https://discord.gg/5kcBCvnbTp"
-            }
-        }
     }
 }

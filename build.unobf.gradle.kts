@@ -121,7 +121,6 @@ publishMods {
     changelog = rootProject.file("CHANGELOG.md").readText()
     type = STABLE
     modLoaders.add(loader)
-    modLoaders.add("quilt")
 
     val targets = prop("mod.mc_targets").split(' ')
     modrinth {

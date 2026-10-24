@@ -1,31 +1,13 @@
-This is a major update to FlightAssistant.
-Please use [Discord](https://discord.gg/5kcBCvnbTp) or [GitHub](https://github.com/Octol1ttle/FlightAssistant) to discuss this release or report any bugs.
+Please report bugs on [GitHub](https://github.com/Henner4746/FlightAssistant/issues). This is an unofficial fork, so please don't report its problems to the original FlightAssistant project.
 
-**A wiki is now available: https://github.com/Octol1ttle/FlightAssistant/wiki**
+## Changes in 3.2.0
 
-## Changes from Beta 1
+- Added support for Minecraft 26.3
+- Fixed a crash when opening the FlightAssistant setup screen or its menus while in a world ("Can only blur once per frame")
+- The 26.2 version is now built against the real 26.2 versions of Fabric API, YetAnotherConfigLib and Architectury API
+- Declared all required dependencies (YetAnotherConfigLib, Architectury API) so launchers install them automatically
 
-- Added Chinese localization
-- Changed the default durability display style to Time
-- Made the `BELOW G/S` warning alert show when deviation is more than 2.5 blocks and the player is below minimums
-- Reduced sensitivity of the `DON'T SINK` alert
-- Adjusted the attitude display to account for crosshair offset
-- Adjusted the way vertical deviation is displayed
-- Reduced the maximum recommended pitch to 45 degrees in the `F/CTL PROTECT LOST` alert text
-- Fixed an issue that caused `TERRAIN AHEAD` and `PULL UP` alerts to appear only right before impact
-- Fixed an issue that caused `AUTO FLT AP OFF` and `AUTO FLT A/THR OFF` alerts to not be displayed when they occur due to losing protections and chunk unloading
-- Fixed an issue where DaBR thrust would be overriden even when Global Automation Override is active
+### Minecraft 26.3 specifics
 
-If you weren't keeping up with changes in v3, here's a quick overview:
-
-- HUD overhaul
-    - New layout: <img src="https://github.com/Octol1ttle/FlightAssistant/wiki/img/hud/full_screenshot_alt.png">
-    - The HUD data now updates at the render frame rate instead of game tick rate. Numbers and scales will move smoother
-- Commands are gone and replaced with the Setup Screen (see below)
-- Introduced the FlightAssistant Setup Screen
-  - Opened with `Numpad Enter` by default
-  - Used to reset and temporarily disable computers & displays
-  - Used to configure the autopilot
-  - Used to fill out the flight plan
-- Various systems have been reworked and features have been added. For example, the GPWS now dynamically adjusts sensitivity based on surroundings
-- Added Chinese localization
+- Default key bindings were adapted to the new input system in 26.3 (Numpad Enter, Numpad 0, Numpad ., arrow keys, Caps Lock, Left Alt)
+- Saving and loading flight plans now uses the system file dialog provided by 26.3
