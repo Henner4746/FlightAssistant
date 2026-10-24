@@ -2,7 +2,6 @@ package ru.octol1ttle.flightassistant.impl.alert.firework
 
 import ru.octol1ttle.flightassistant.api.util.extensions.*
 import ru.octol1ttle.flightassistant.api.util.extensions.FAGuiGraphics
-import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.network.chat.Component
 import ru.octol1ttle.flightassistant.api.alert.Alert
 import ru.octol1ttle.flightassistant.api.alert.AlertData

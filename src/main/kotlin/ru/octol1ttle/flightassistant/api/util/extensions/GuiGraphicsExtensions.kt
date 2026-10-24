@@ -6,7 +6,6 @@ import kotlin.math.max
 import net.minecraft.ChatFormatting
 import net.minecraft.client.gui.Font
 import ru.octol1ttle.flightassistant.api.util.extensions.FAGuiGraphics
-import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.FormattedText
 import ru.octol1ttle.flightassistant.FlightAssistant.mc
@@ -58,8 +57,8 @@ val warningColor: Int
  * Translates this graphics' pose and then scales it.
  */
 fun FAGuiGraphics.fusedTranslateScale(x: Float, y: Float, scale: Float) {
-    pose().translate(x, y /*? if <1.21.6 {*/, 0.0f /*?}*/)
-    pose().scale(scale, scale /*? if <1.21.6 {*/, 1.0f /*?}*/)
+    pose().translate(x, y /*? if <1.21.6 {*//*, 0.0f *//*?}*/)
+    pose().scale(scale, scale /*? if <1.21.6 {*//*, 1.0f *//*?}*/)
 }
 
 fun FAGuiGraphics.hLineDashed(
@@ -90,24 +89,24 @@ fun textWidth(text: String): Int {
 
 fun FAGuiGraphics.drawString(text: String, x: Int, y: Int, color: Int, shadow: Boolean = false) {
 //? if <26.2 {
-    drawString(font, text, x, y, color, shadow)
-//?} else {
+    /*drawString(font, text, x, y, color, shadow)
+*///?} else {
   this.text(font, text, x, y, color, shadow)
 //?}
 }
 
 fun FAGuiGraphics.drawRightAlignedString(text: String, x: Int, y: Int, color: Int, shadow: Boolean = false) {
 //? if <26.2 {
-    drawString(font, text, x - font.width(text), y, color, shadow)
-//?} else {
+    /*drawString(font, text, x - font.width(text), y, color, shadow)
+*///?} else {
   this.text(font, text, x - font.width(text), y, color, shadow)
 //?}
 }
 
 fun FAGuiGraphics.drawMiddleAlignedString(text: String, x: Int, y: Int, color: Int, shadow: Boolean = false) {
 //? if <26.2 {
-    drawString(font, text, x - font.width(text) / 2 + 1, y, color, shadow)
-//?} else {
+    /*drawString(font, text, x - font.width(text) / 2 + 1, y, color, shadow)
+*///?} else {
   this.text(font, text, x - font.width(text) / 2 + 1, y, color, shadow)
 //?}
 }
@@ -118,8 +117,8 @@ fun textWidth(formattedText: FormattedText): Int {
 
 fun FAGuiGraphics.drawString(text: Component, x: Int, y: Int, color: Int, shadow: Boolean = false): Int {
 //? if <26.2 {
-    drawString(font, text, x, y, color, shadow)
-//?} else {
+    /*drawString(font, text, x, y, color, shadow)
+*///?} else {
   this.text(font, text, x, y, color, shadow)
 //?}
     return 1
@@ -135,16 +134,16 @@ private fun getContrasting(original: Int): Int {
 
 fun FAGuiGraphics.drawRightAlignedString(text: Component, x: Int, y: Int, color: Int, shadow: Boolean = false) {
 //? if <26.2 {
-    drawString(font, text, x - textWidth(text), y, color, shadow)
-//?} else {
+    /*drawString(font, text, x - textWidth(text), y, color, shadow)
+*///?} else {
   this.text(font, text, x - textWidth(text), y, color, shadow)
 //?}
 }
 
 fun FAGuiGraphics.drawMiddleAlignedString(text: Component, x: Int, y: Int, color: Int, shadow: Boolean = false) {
 //? if <26.2 {
-    drawString(font, text, x - textWidth(text) / 2 + 1, y, color, shadow)
-//?} else {
+    /*drawString(font, text, x - textWidth(text) / 2 + 1, y, color, shadow)
+*///?} else {
   this.text(font, text, x - textWidth(text) / 2 + 1, y, color, shadow)
 //?}
 }
@@ -156,7 +155,7 @@ fun FAGuiGraphics.drawHighlightedCenteredText(text: Component, x: Int, y: Int, c
         val halfWidth: Int = textWidth(text) / 2
         fill(x - halfWidth - 1, y - 1, x + halfWidth + 2, y + 8, color)
 //? if <1.21.6
-        pose().translate(0.0f, 0.0f, 100.0f)
+        /*pose().translate(0.0f, 0.0f, 100.0f)*/
         drawMiddleAlignedString(text, x, y, getContrasting(color), shadow)
     } else {
         drawMiddleAlignedString(text, x, y, color, shadow)
@@ -175,17 +174,17 @@ fun org.joml.Matrix3x2fStack.push() {
 
 
 //? if <26.2 {
-//? if >=1.21.9 {
-/*fun FAGuiGraphics.renderOutline(x: Int, y: Int, width: Int, height: Int, color: Int) {
+/*//? if >=1.21.9 {
+fun FAGuiGraphics.renderOutline(x: Int, y: Int, width: Int, height: Int, color: Int) {
 //? if >=1.21.11 {
-    /^renderOutline(
-^///?} else
-    submitOutline(
+    renderOutline(
+//?} else
+    /^submitOutline(^/
         x, y, width, height, color)
     renderDeferredElements()
 }
-*///?}
 //?}
+*///?}
 
 
 //? if >=26.2 {
@@ -231,8 +230,8 @@ fun <T> castToPlatformType(obj: Any?): T = obj as T
 
 fun net.minecraft.client.Minecraft.setScreenSafe(screen: net.minecraft.client.gui.screens.Screen?) {
 //? if <26.2 {
-    this.setScreen(screen)
-//?} else {
+    /*this.setScreen(screen)
+*///?} else {
     this.setScreenAndShow(castToPlatformType(screen))
 //?}
 }
@@ -242,10 +241,10 @@ fun net.minecraft.client.gui.components.AbstractWidget.renderCompat(guiGraphics:
     this.extractRenderState(guiGraphics, mouseX, mouseY, partialTick)
 }
 //?} else {
-fun net.minecraft.client.gui.components.AbstractWidget.renderCompat(guiGraphics: FAGuiGraphics, mouseX: Int, mouseY: Int, partialTick: Float) {
+/*fun net.minecraft.client.gui.components.AbstractWidget.renderCompat(guiGraphics: FAGuiGraphics, mouseX: Int, mouseY: Int, partialTick: Float) {
     this.render(guiGraphics, mouseX, mouseY, partialTick)
 }
-//?}
+*///?}
 
 //? if >=26.2 {
 fun net.minecraft.client.gui.GuiGraphicsExtractor.drawString(font: net.minecraft.client.gui.Font, text: net.minecraft.network.chat.Component, x: Int, y: Int, color: Int, shadow: Boolean = false) {
@@ -259,16 +258,16 @@ fun net.minecraft.client.gui.GuiGraphicsExtractor.drawString(font: net.minecraft
 
 fun FAGuiGraphics.pushPose() {
 //? if <26.2 {
-    this.pose().pushPose()
-//?} else {
+    /*this.pose().pushPose()
+*///?} else {
     this.pose().pushMatrix()
 //?}
 }
 
 fun FAGuiGraphics.popPose() {
 //? if <26.2 {
-    this.pose().popPose()
-//?} else {
+    /*this.pose().popPose()
+*///?} else {
     this.pose().popMatrix()
 //?}
 }

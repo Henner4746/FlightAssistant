@@ -53,17 +53,17 @@ class FireworkComputer(computers: ComputerBus, private val mc: Minecraft) : Comp
             return@register net.minecraft.world.InteractionResult.PASS
         }
 //?} else {
-        InteractionEvent.RIGHT_CLICK_ITEM.register(InteractionEvent.RightClickItem { player, hand ->
+        /*InteractionEvent.RIGHT_CLICK_ITEM.register(InteractionEvent.RightClickItem { player, hand ->
             val stack: ItemStack = player.getItemInHand(hand)
             if (player.level().isClientSide() && computers.data.flying && stack.item is FireworkRocketItem) {
                 val explosive = FAConfig.safety.fireworkLockExplosive && !isEmptyOrSafe(player, hand)
                 val anyTerrainAhead = FAConfig.safety.fireworkLockObstacles && anyTerrainAhead()
                 if (computers.data.automationsAllowed() && (explosive || anyTerrainAhead)) {
 //? if >=1.21.2 {
-                    /*return@RightClickItem dev.architectury.event.EventResult.interruptFalse()
-*///?} else {
-                    return@RightClickItem dev.architectury.event.CompoundEventResult.interruptFalse(stack)
-//?}
+                    return@RightClickItem dev.architectury.event.EventResult.interruptFalse()
+//?} else {
+                    /^return@RightClickItem dev.architectury.event.CompoundEventResult.interruptFalse(stack)
+^///?}
                 }
 
                 if (!waitingForResponse) {
@@ -73,12 +73,12 @@ class FireworkComputer(computers: ComputerBus, private val mc: Minecraft) : Comp
             }
 
 //? if >=1.21.2 {
-            /*return@RightClickItem dev.architectury.event.EventResult.pass()
-*///?} else {
-            return@RightClickItem dev.architectury.event.CompoundEventResult.pass()
-//?}
+            return@RightClickItem dev.architectury.event.EventResult.pass()
+//?} else {
+            /^return@RightClickItem dev.architectury.event.CompoundEventResult.pass()
+^///?}
         })
-//?}
+*///?}
         FireworkBoostCallback.EVENT.register(FireworkBoostCallback { _, _ ->
             if (waitingForResponse) {
                 waitingForResponse = false
@@ -107,9 +107,9 @@ class FireworkComputer(computers: ComputerBus, private val mc: Minecraft) : Comp
         safeFireworkCount = 0
         for (stack: ItemStack in
 //? if >=1.21.5 {
-        /*computers.data.player.inventory.nonEquipmentItems
-*///?} else
-        computers.data.player.inventory.items
+        computers.data.player.inventory.nonEquipmentItems
+//?} else
+        /*computers.data.player.inventory.items*/
         ) {
             if (isFireworkAndSafe(stack)) {
                 safeFireworkCount += stack.count
@@ -130,9 +130,9 @@ class FireworkComputer(computers: ComputerBus, private val mc: Minecraft) : Comp
 
     private fun hasNoExplosions(stack: ItemStack): Boolean {
 //? if >=1.21 {
-        /*return stack.get(net.minecraft.core.component.DataComponents.FIREWORKS)?.explosions?.isEmpty() != false
-*///?} else
-        return stack.getTagElement("Fireworks")?.getList("Explosions", net.minecraft.nbt.Tag.TAG_COMPOUND.toInt())?.isEmpty() != false
+        return stack.get(net.minecraft.core.component.DataComponents.FIREWORKS)?.explosions?.isEmpty() != false
+//?} else
+        /*return stack.getTagElement("Fireworks")?.getList("Explosions", net.minecraft.nbt.Tag.TAG_COMPOUND.toInt())?.isEmpty() != false*/
     }
 
     private fun anyTerrainAhead(): Boolean {
@@ -149,9 +149,9 @@ class FireworkComputer(computers: ComputerBus, private val mc: Minecraft) : Comp
             useFirework(player, InteractionHand.OFF_HAND)
         } else if (safeFireworkSlot != null) {
 //? if >=1.21.5 {
-            /*player.inventory.selectedSlot = safeFireworkSlot!!
-*///?} else
-            player.inventory.selected = safeFireworkSlot!!
+            player.inventory.selectedSlot = safeFireworkSlot!!
+//?} else
+            /*player.inventory.selected = safeFireworkSlot!!*/
             useFirework(player, InteractionHand.MAIN_HAND)
         }
     }

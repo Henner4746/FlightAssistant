@@ -37,11 +37,11 @@ class AttitudeDisplay(computers: ComputerBus) : Display(computers) {
 
             pushPose()
 //? if <1.21.6
-            pose().translate(0.0f, 0.0f, -200.0f)
+            /*pose().translate(0.0f, 0.0f, -200.0f)*/
 //? if >=1.21.6 {
-            /*pose().rotateAbout(ru.octol1ttle.flightassistant.api.util.radians(-computers.hudData.roll), centerX, centerYF)
-*///?} else
-            pose().rotateAround(Axis.ZN.rotationDegrees(computers.hudData.roll), centerX, centerYF, 0.0f)
+            pose().rotateAbout(ru.octol1ttle.flightassistant.api.util.radians(-computers.hudData.roll), centerX, centerYF)
+//?} else
+            /*pose().rotateAround(Axis.ZN.rotationDegrees(computers.hudData.roll), centerX, centerYF, 0.0f)*/
 
             if (!FAConfig.display.drawPitchOutsideFrame) {
                 HudFrame.scissor(this)
@@ -121,11 +121,11 @@ class AttitudeDisplay(computers: ComputerBus) : Display(computers) {
             val y: Int = ScreenSpace.getY(min) ?: break
             pushPose()
 
-            pose().translate(centerX, y.toFloat() /*? if <1.21.6 {*/, 0.0f /*?}*/) // Rotate around the middle of the arrow
+            pose().translate(centerX, y.toFloat() /*? if <1.21.6 {*//*, 0.0f *//*?}*/) // Rotate around the middle of the arrow
 //? if >=1.21.6 {
-            /*pose().rotate(ru.octol1ttle.flightassistant.api.util.radians(180.0f))
-*///?} else
-            pose().mulPose(Axis.ZN.rotationDegrees(180.0f)) // Flip upside down
+            pose().rotate(ru.octol1ttle.flightassistant.api.util.radians(180.0f))
+//?} else
+            /*pose().mulPose(Axis.ZN.rotationDegrees(180.0f))*/ // Flip upside down
             drawMiddleAlignedString(arrowText, 0, -9, if (minInput?.status == ControlInput.Status.ACTIVE) warningColor else cautionColor)
 
             popPose()

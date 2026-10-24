@@ -47,9 +47,9 @@ class AirDataComputer(computers: ComputerBus, private val mc: Minecraft) : Compu
             if (computers.gpws.isDisabledOrFaulted()) null
             else if (computers.gpws.groundY == null) Double.MAX_VALUE
 //? if >=1.21.5 {
-            /*else max(player.fallDistance, altitude - computers.gpws.groundY!!)
-*///?} else
-            else max(player.fallDistance.toDouble(), altitude - computers.gpws.groundY!!)
+            else max(player.fallDistance, altitude - computers.gpws.groundY!!)
+//?} else
+            /*else max(player.fallDistance.toDouble(), altitude - computers.gpws.groundY!!)*/
 
     // TODO: consider removing
     val fallDistanceSafe: Boolean
@@ -89,10 +89,10 @@ class AirDataComputer(computers: ComputerBus, private val mc: Minecraft) : Compu
             return false
         }
         //? if <26.2 {
-        return (!checkFlying || flying) && (FAConfig.global.automationsAllowedInOverlays || (mc.screen == null && mc.overlay == null))
-//?} else {
-/*        return (!checkFlying || flying) && (FAConfig.global.automationsAllowedInOverlays || (mc.gui.screen() == null && mc.gui.overlay() == null))
-*///?}
+        /*return (!checkFlying || flying) && (FAConfig.global.automationsAllowedInOverlays || (mc.screen == null && mc.overlay == null))
+*///?} else {
+        return (!checkFlying || flying) && (FAConfig.global.automationsAllowedInOverlays || (mc.gui.screen() == null && mc.gui.overlay() == null))
+//?}
     }
 
     fun isInvulnerableTo(source: DamageSource): Boolean {
@@ -100,9 +100,9 @@ class AirDataComputer(computers: ComputerBus, private val mc: Minecraft) : Compu
             return false
         }
 //? if >=1.21.2 {
-        /*return (player as ru.octol1ttle.flightassistant.mixin.EntityInvoker).invokeIsInvulnerableToBase(source)
-*///?} else
-        return player.isInvulnerableTo(source)
+        return (player as ru.octol1ttle.flightassistant.mixin.EntityInvoker).invokeIsInvulnerableToBase(source)
+//?} else
+        /*return player.isInvulnerableTo(source)*/
                 || player.abilities.invulnerable && !source.`is`(DamageTypeTags.BYPASSES_INVULNERABILITY)
                 || player.abilities.mayfly && source.`is`(DamageTypeTags.IS_FALL)
     }

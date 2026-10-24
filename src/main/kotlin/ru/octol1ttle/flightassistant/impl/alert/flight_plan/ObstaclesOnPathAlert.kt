@@ -2,7 +2,6 @@ package ru.octol1ttle.flightassistant.impl.alert.flight_plan
 
 import ru.octol1ttle.flightassistant.api.util.extensions.*
 import ru.octol1ttle.flightassistant.api.util.extensions.FAGuiGraphics
-import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.network.chat.Component
 import net.minecraft.world.level.ClipContext
 import net.minecraft.world.phys.HitResult

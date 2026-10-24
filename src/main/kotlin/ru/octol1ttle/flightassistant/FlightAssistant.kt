@@ -17,21 +17,21 @@ import ru.octol1ttle.flightassistant.impl.computer.ComputerHost
 import ru.octol1ttle.flightassistant.impl.display.HudDisplayHost
 
 //? if >=1.21.11 {
-/*private val net.minecraft.client.Camera.xRot: Float
+private val net.minecraft.client.Camera.xRot: Float
     get() = this.xRot()
 
 private val net.minecraft.client.Camera.yRot: Float
     get() = this.yRot()
-*///?}
+//?}
 
 object FlightAssistant {
     const val MOD_ID: String = "flightassistant"
     internal val mc: Minecraft = Minecraft.getInstance()
     internal val profiler: ProfilerFiller
 //? if >=1.21.4 {
-        /*get() = net.minecraft.util.profiling.Profiler.get()
-*///?} else
-        get() = mc.profiler
+        get() = net.minecraft.util.profiling.Profiler.get()
+//?} else
+        /*get() = mc.profiler*/
     internal val logger: Logger = LoggerFactory.getLogger("FlightAssistant")
     internal var initComplete: Boolean = false
 
@@ -68,8 +68,8 @@ object FlightAssistant {
 
     internal fun id(path: String): ResourceLocation {
 //? if >=1.21 {
-        /*return ResourceLocation.fromNamespaceAndPath(MOD_ID, path)
-*///?} else
-        return ResourceLocation(MOD_ID, path)
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path)
+//?} else
+        /*return ResourceLocation(MOD_ID, path)*/
     }
 }

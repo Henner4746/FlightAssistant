@@ -2,7 +2,6 @@ package ru.octol1ttle.flightassistant.screen
 
 import kotlin.properties.Delegates
 import ru.octol1ttle.flightassistant.api.util.extensions.*
-import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.network.chat.Component
 import ru.octol1ttle.flightassistant.FAKeyMappings
@@ -22,22 +21,18 @@ abstract class FABaseScreen(val parent: Screen?, title: Component) : Screen(titl
         this.addRenderableWidget(SmartStringWidget(this.centerX, 7, this.title).middleAligned())
     }
 
-//? if >=26.2 {
-/*    override fun extractRenderState(guiGraphics: net.minecraft.client.gui.GuiGraphicsExtractor, mouseX: Int, mouseY: Int, partialTick: Float) {
-        this.extractBackground(guiGraphics, mouseX, mouseY, partialTick)
-        super.extractRenderState(guiGraphics, mouseX, mouseY, partialTick)
-    }
-*///?} else {
-    override fun render(guiGraphics: FAGuiGraphics, mouseX: Int, mouseY: Int, delta: Float) {
+    // 26.2+ extracts the background itself before the screen contents and only allows one blur per frame
+//? if <26.2 {
+    /*override fun render(guiGraphics: FAGuiGraphics, mouseX: Int, mouseY: Int, delta: Float) {
 //? if <1.21.6 {
-        this.renderBackground(
+        /^this.renderBackground(
             guiGraphics
-            /*? if >=1.21 {*//*, mouseX, mouseY, delta *///?}
+            /^¹? if >=1.21 {¹^/, mouseX, mouseY, delta //?}
         )
-//?}
+^///?}
         super.render(guiGraphics, mouseX, mouseY, delta)
     }
-//?}
+*///?}
 
     override fun onClose() {
         this.minecraft!!.setScreenSafe(parent)
@@ -46,7 +41,7 @@ abstract class FABaseScreen(val parent: Screen?, title: Component) : Screen(titl
     override fun isPauseScreen(): Boolean = false
 
 //? if >=1.21.9 {
-    /*override fun keyPressed(event: net.minecraft.client.input.KeyEvent): Boolean {
+    override fun keyPressed(event: net.minecraft.client.input.KeyEvent): Boolean {
         if (super.keyPressed(event)) {
             return true
         } else if (FAKeyMappings.openFlightAssistantSetup.matches(event)) {
@@ -56,8 +51,8 @@ abstract class FABaseScreen(val parent: Screen?, title: Component) : Screen(titl
 
         return false
     }
-*///?} else {
-    override fun keyPressed(keyCode: Int, scanCode: Int, modifiers: Int): Boolean {
+//?} else {
+    /*override fun keyPressed(keyCode: Int, scanCode: Int, modifiers: Int): Boolean {
         if (super.keyPressed(keyCode, scanCode, modifiers)) {
 			return true
 		} else if (FAKeyMappings.openFlightAssistantSetup.matches(keyCode, scanCode)) {
@@ -67,5 +62,5 @@ abstract class FABaseScreen(val parent: Screen?, title: Component) : Screen(titl
 
         return false
     }
-//?}
+*///?}
 }

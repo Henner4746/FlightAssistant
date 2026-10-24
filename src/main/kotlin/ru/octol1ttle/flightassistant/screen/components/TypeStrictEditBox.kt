@@ -12,15 +12,15 @@ class TypeStrictEditBox<T>(x: Int, y: Int, width: Int, height: Int, initialValue
     init {
         this.value = initialValue.toString()
 //? if <26.2 {
-        this.setFilter {
+        /*this.setFilter {
             val value: T? = convertFunction.invoke(it)
             value != null && filter.test(value)
         }
-//?}
+*///?}
         this.setResponder {
 //? if <26.2 {
-            onValueChange.accept(convertFunction.invoke(it)!!)
-//?} else {
+            /*onValueChange.accept(convertFunction.invoke(it)!!)
+*///?} else {
             val v = convertFunction.invoke(it)
             if (v != null && filter.test(v)) onValueChange.accept(v)
 //?}

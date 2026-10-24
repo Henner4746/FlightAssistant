@@ -5,7 +5,7 @@ import net.minecraft.client.gui.components.StringWidget
 import net.minecraft.network.chat.Component
 import ru.octol1ttle.flightassistant.api.util.extensions.font
 //? if >=1.21.11
-/*import ru.octol1ttle.flightassistant.api.util.extensions.setColor*/
+import ru.octol1ttle.flightassistant.api.util.extensions.setColor
 
 class SmartStringWidget(x: Int, y: Int, component: Component) : StringWidget(x, y, font.width(component), font.lineHeight, component, font) {
     init {
@@ -14,8 +14,8 @@ class SmartStringWidget(x: Int, y: Int, component: Component) : StringWidget(x, 
 
     fun leftAligned(): SmartStringWidget {
 //? if <1.21.9 {
-        this.alignLeft()
-//?}
+        /*this.alignLeft()
+*///?}
         return this
     }
 
@@ -30,9 +30,9 @@ class SmartStringWidget(x: Int, y: Int, component: Component) : StringWidget(x, 
     }
 
 //? if >=1.21.11 {
-    /*fun setColor(color: Int): SmartStringWidget {
+    fun setColor(color: Int): SmartStringWidget {
         this.message = this.message.copy().setColor(color)
         return this
     }
-*///?}
+//?}
 }

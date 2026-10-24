@@ -4,7 +4,7 @@ import org.spongepowered.asm.mixin.Mixin;
 
 //? if fabric && >=1.21.6 {
 //? if <26.2 {
-@Mixin(net.minecraft.client.gui.Gui.class)
+/*@Mixin(net.minecraft.client.gui.Gui.class)
 abstract class GuiMixinNew {
     @org.spongepowered.asm.mixin.injection.Inject(method = "render", at = @org.spongepowered.asm.mixin.injection.At(value = "INVOKE", target = "Lnet/minecraft/client/gui/Gui;renderHotbarAndDecorations(Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/client/DeltaTracker;)V"))
     private void beforeRenderHotbarAndDecorations(net.minecraft.client.gui.GuiGraphics guiGraphics, net.minecraft.client.DeltaTracker deltaTracker, org.spongepowered.asm.mixin.injection.callback.CallbackInfo ci) {
@@ -12,7 +12,7 @@ abstract class GuiMixinNew {
         guiGraphics.nextStratum();
     }
 }
-//?} else {
+*///?} else {
 @Mixin(net.minecraft.client.gui.Hud.class)
 abstract class GuiMixinNew {
     @org.spongepowered.asm.mixin.injection.Inject(method = "extractRenderState", at = @org.spongepowered.asm.mixin.injection.At("TAIL"))

@@ -24,7 +24,7 @@ class FlightPathDisplay(computers: ComputerBus) : Display(computers) {
 
             pushPose()
 //? if <1.21.6
-            pose().translate(0.0f, 0.0f, -150.0f)
+            /*pose().translate(0.0f, 0.0f, -150.0f)*/
             fusedTranslateScale(trueX, trueY, FAConfig.display.flightPathVectorSize)
 
             val bodySideSize = 3

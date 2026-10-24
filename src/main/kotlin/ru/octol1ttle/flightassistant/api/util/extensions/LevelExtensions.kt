@@ -6,15 +6,15 @@ import net.minecraft.world.level.Level
 val Level.bottomY: Int
     get() {
 //? if >=1.21.4 {
-        /*return this.minY
-*///?} else
-        return this.minBuildHeight
+        return this.minY
+//?} else
+        /*return this.minBuildHeight*/
     }
 
 val Level.topY: Int
     get() {
 //? if >=1.21.4 {
-        /*return this.maxY
-*///?} else
-        return this.maxBuildHeight
+        return this.maxY
+//?} else
+        /*return this.maxBuildHeight*/
     }

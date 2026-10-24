@@ -2,7 +2,6 @@ package ru.octol1ttle.flightassistant.screen.system
 
 import ru.octol1ttle.flightassistant.api.util.extensions.*
 import net.minecraft.ChatFormatting
-import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.Button
 import net.minecraft.client.gui.components.ContainerObjectSelectionList
 import net.minecraft.client.gui.components.events.GuiEventListener
@@ -33,14 +32,14 @@ class SystemManagementList(y0: Int, y1: Int, width: Int, baseKey: String, contro
         val children = listOf(this.displayName, faultText, offText, toggleButton)
 
 //? if >=26.2 {
-/*        override fun extractContent(guiGraphics: net.minecraft.client.gui.GuiGraphicsExtractor, mouseX: Int, mouseY: Int, hovered: Boolean, partialTick: Float) {
+        override fun extractContent(guiGraphics: net.minecraft.client.gui.GuiGraphicsExtractor, mouseX: Int, mouseY: Int, hovered: Boolean, partialTick: Float) {
             val top = contentY
-*///?} else if >=1.21.9 {
+//?} else if >=1.21.9 {
 /*        override fun renderContent(guiGraphics: FAGuiGraphics, mouseX: Int, mouseY: Int, hovering: Boolean, partialTick: Float) {
             val top = contentY
 *///?} else {
-        override fun render(guiGraphics: FAGuiGraphics, index: Int, top: Int, left: Int, width: Int, height: Int, mouseX: Int, mouseY: Int, hovering: Boolean, partialTick: Float) {
-//?}
+        /*override fun render(guiGraphics: FAGuiGraphics, index: Int, top: Int, left: Int, width: Int, height: Int, mouseX: Int, mouseY: Int, hovering: Boolean, partialTick: Float) {
+*///?}
             displayName.x = this.xOffset
             displayName.y = top
             displayName.renderCompat(guiGraphics, mouseX, mouseY, partialTick)

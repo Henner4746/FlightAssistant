@@ -1,7 +1,6 @@
 package ru.octol1ttle.flightassistant.screen.fms.departure
 
 import ru.octol1ttle.flightassistant.api.util.extensions.*
-import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.Button
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.network.chat.CommonComponents
@@ -49,18 +48,18 @@ class DepartureScreen(parent: Screen) : FABaseScreen(parent, Component.translata
     }
 
 //? if >=26.2 {
-/*    override fun extractRenderState(guiGraphics: net.minecraft.client.gui.GuiGraphicsExtractor, mouseX: Int, mouseY: Int, delta: Float) {
+    override fun extractRenderState(guiGraphics: net.minecraft.client.gui.GuiGraphicsExtractor, mouseX: Int, mouseY: Int, delta: Float) {
         discardChanges.active = state != DepartureScreenState.load(computers.plan.departureData)
 
         super.extractRenderState(guiGraphics, mouseX, mouseY, delta)
     }
-*///?} else {
-    override fun render(guiGraphics: FAGuiGraphics, mouseX: Int, mouseY: Int, delta: Float) {
+//?} else {
+    /*override fun render(guiGraphics: FAGuiGraphics, mouseX: Int, mouseY: Int, delta: Float) {
         discardChanges.active = state != DepartureScreenState.load(computers.plan.departureData)
 
         super.render(guiGraphics, mouseX, mouseY, delta)
     }
-//?}
+*///?}
 
     companion object {
         private var state: DepartureScreenState = DepartureScreenState()

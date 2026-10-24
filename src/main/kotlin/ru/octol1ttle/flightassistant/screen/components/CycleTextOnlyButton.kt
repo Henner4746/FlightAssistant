@@ -4,7 +4,6 @@ import dev.isxander.yacl3.api.NameableEnum
 import java.util.function.Consumer
 import ru.octol1ttle.flightassistant.api.util.extensions.*
 import net.minecraft.ChatFormatting
-import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.AbstractButton
 import net.minecraft.client.gui.narration.NarrationElementOutput
 import net.minecraft.network.chat.Component
@@ -26,12 +25,12 @@ class CycleTextOnlyButton<E : NameableEnum>(x: Int, y: Int, private val entries:
     }
 
 //? if >=26.2 {
-/*    override fun extractContents(guiGraphics: net.minecraft.client.gui.GuiGraphicsExtractor, mouseX: Int, mouseY: Int, partialTick: Float) {
-*///?} else if >=1.21.11 {
+    override fun extractContents(guiGraphics: net.minecraft.client.gui.GuiGraphicsExtractor, mouseX: Int, mouseY: Int, partialTick: Float) {
+//?} else if >=1.21.11 {
 /*    override fun renderContents(guiGraphics: FAGuiGraphics, mouseX: Int, mouseY: Int, partialTick: Float) {
 *///?} else {
-    override fun renderWidget(guiGraphics: FAGuiGraphics, mouseX: Int, mouseY: Int, partialTick: Float) {
-//?}
+    /*override fun renderWidget(guiGraphics: FAGuiGraphics, mouseX: Int, mouseY: Int, partialTick: Float) {
+*///?}
         val message: Component = TextOnlyButton.getMessageComponent(this)
 
         this.width = font.width(message)
@@ -39,22 +38,22 @@ class CycleTextOnlyButton<E : NameableEnum>(x: Int, y: Int, private val entries:
     }
 
 //? if >=1.21.9 {
-    /*override fun onPress(input: net.minecraft.client.input.InputWithModifiers) {
+    override fun onPress(input: net.minecraft.client.input.InputWithModifiers) {
         if (input.hasShiftDown()) {
             this.cycleValue(-1)
         } else {
             this.cycleValue(1)
         }
     }
-*///?} else {
-    override fun onPress() {
+//?} else {
+    /*override fun onPress() {
         if (net.minecraft.client.gui.screens.Screen.hasShiftDown()) {
             this.cycleValue(-1)
         } else {
             this.cycleValue(1)
         }
     }
-//?}
+*///?}
 
     private fun cycleValue(delta: Int) {
         this.index = Mth.positiveModulo(this.index + delta, this.entries.size)

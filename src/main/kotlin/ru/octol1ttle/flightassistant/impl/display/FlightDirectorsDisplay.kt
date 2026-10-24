@@ -34,11 +34,11 @@ class FlightDirectorsDisplay(computers: ComputerBus) : Display(computers) {
 
             pushPose()
 //? if <1.21.6
-            pose().translate(0.0f, 0.0f, -100.0f)
+            /*pose().translate(0.0f, 0.0f, -100.0f)*/
 //? if >=1.21.6 {
-            /*pose().rotateAbout(ru.octol1ttle.flightassistant.api.util.radians(-computers.hudData.roll), centerXF, centerYF)
-*///?} else
-            pose().rotateAround(Axis.ZN.rotationDegrees(computers.hudData.roll), centerXF, centerYF, 0.0f)
+            pose().rotateAbout(ru.octol1ttle.flightassistant.api.util.radians(-computers.hudData.roll), centerXF, centerYF)
+//?} else
+            /*pose().rotateAround(Axis.ZN.rotationDegrees(computers.hudData.roll), centerXF, centerYF, 0.0f)*/
 
             enableScissor(HudFrame.left, HudFrame.top, HudFrame.right, HudFrame.bottom)
 

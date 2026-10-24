@@ -2,7 +2,6 @@ package ru.octol1ttle.flightassistant.screen.autoflight
 
 import ru.octol1ttle.flightassistant.api.util.extensions.*
 import net.minecraft.ChatFormatting
-import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.Button
 import net.minecraft.client.gui.components.events.GuiEventListener
 import net.minecraft.client.gui.screens.Screen
@@ -62,22 +61,22 @@ class AutoFlightScreen(parent: Screen) : FABaseScreen(parent, Component.translat
     }
 
 //? if >=26.2 {
-/*    override fun extractRenderState(guiGraphics: net.minecraft.client.gui.GuiGraphicsExtractor, mouseX: Int, mouseY: Int, delta: Float) {
+    override fun extractRenderState(guiGraphics: net.minecraft.client.gui.GuiGraphicsExtractor, mouseX: Int, mouseY: Int, delta: Float) {
         updateButton(flightDirectors, "menu.flightassistant.autoflight.flight_directors", computers.autoflight.flightDirectors)
         updateButton(autoThrust, "menu.flightassistant.autoflight.auto_thrust", computers.autoflight.autoThrust)
         updateButton(autopilot, "menu.flightassistant.autoflight.autopilot", computers.autoflight.autopilot)
 
         super.extractRenderState(guiGraphics, mouseX, mouseY, delta)
     }
-*///?} else {
-    override fun render(guiGraphics: FAGuiGraphics, mouseX: Int, mouseY: Int, delta: Float) {
+//?} else {
+    /*override fun render(guiGraphics: FAGuiGraphics, mouseX: Int, mouseY: Int, delta: Float) {
         updateButton(flightDirectors, "menu.flightassistant.autoflight.flight_directors", computers.autoflight.flightDirectors)
         updateButton(autoThrust, "menu.flightassistant.autoflight.auto_thrust", computers.autoflight.autoThrust)
         updateButton(autopilot, "menu.flightassistant.autoflight.autopilot", computers.autoflight.autopilot)
 
         super.render(guiGraphics, mouseX, mouseY, delta)
     }
-//?}
+*///?}
 
     override fun onClose() {
         state.apply(computers.autoflight)
